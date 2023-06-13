@@ -97,7 +97,7 @@ class Main {
     this.doneRetrain = document.getElementById("doneRetrain");
     this.trainingCommands = document.getElementById("trainingCommands");
 
-    this.videoCallBtn = document.getElementById("videoCallBtn");
+    
     this.videoCall = document.getElementById("videoCall");
 
     this.trainedCardsHolder = document.getElementById("trainedCardsHolder");
@@ -434,7 +434,7 @@ class Main {
   of the translate page and starts or stops prediction on click.*/
   createTranslateBtn() {
     this.predButton.style.display = "block";
-    this.createVideoCallBtn(); // create video call button that displays on translate page
+    t// create video call button that displays on translate page
     this.createBackToTrainBtn(); // create back to train button that will go back to training page
 
     this.predButton.addEventListener('click', () => {
@@ -446,7 +446,7 @@ class Main {
         this.video.style.display = "inline-block"; // turn on video from webscam in case it's off
 
         this.videoCall.style.display = "none"; // turn off video call in case it's on
-        this.videoCallBtn.style.display = "block";
+        
 
         this.backToTrainButton.style.display = "block";
 
@@ -555,7 +555,7 @@ class Main {
       // Remove all elements from translation mode
       this.video.className = "videoTrain";
       this.videoContainer.className = "videoContainerTrain";
-      this.videoCallBtn.style.display = "none";
+      
 
       this.translationHolder.style.display = "none";
       this.statusContainer.style.display = "none";
@@ -576,27 +576,7 @@ class Main {
   }
 
   /*This function displays the button that start video call.*/
-  createVideoCallBtn() {
-    // Display video call feed instead of normal webcam feed when video call btn is clicked
-    videoCallBtn.addEventListener('click', () => {
-      this.stageTitle.innerText = "Video Call";
-      this.stageInstruction.innerText = "Translate Gestures to talk to people on Video Call";
-
-      this.video.style.display = "none";
-      this.videoContainer.style.borderStyle = "none";
-      this.videoContainer.style.overflow = "hidden";
-      this.videoContainer.style.width = "630px";
-      this.videoContainer.style.height = "355px";
-
-      this.videoCall.style.display = "block";
-      this.videoCallBtn.style.display = "none";
-      this.backToTrainButton.style.display = "none";
-      this.predButton.innerText = "Local Translation";
-      this.predButton.style.display = "block";
-
-      this.setStatusText("Status: Video Call Activated");
-    })
-  }
+  
   /*This function sets the status text*/
   setStatusText(status, type) { //make default type thing
     this.statusContainer.style.display = "block";
